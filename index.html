@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="World Class Engineers - Azure cloud solutions and enterprise-grade backend development for local businesses">
+    <title>World Class Engineers | Azure Cloud & Backend Development</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom styles for animations -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#60a5fa',
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8',
+                        },
+                        secondary: {
+                            DEFAULT: '#0f172a',
+                        },
+                        success: {
+                            DEFAULT: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="bg-white sticky top-0 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="logo">
+                <a href="index.html" class="text-xl font-bold text-secondary">
+                    World Class Engineers
+                </a>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="index.html" class="font-medium text-secondary border-b-2 border-primary">Home</a></li>
+                    <li><a href="services.html" class="font-medium text-secondary hover:text-primary transition-all">Services</a></li>
+                    <li><a href="about.html" class="font-medium text-secondary hover:text-primary transition-all">About</a></li>
+                    <li><a href="case-studies.html" class="font-medium text-secondary hover:text-primary transition-all">Case Studies</a></li>
+                    <li><a href="contact.html" class="bg-primary text-white px-4 py-2 rounded font-medium hover:bg-primary-dark transition-all">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden text-2xl cursor-pointer menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50 animate-fadeIn">
+        <div class="container mx-auto px-4 md:flex items-center">
+            <div class="md:w-1/2 md:pr-12 mb-8 md:mb-0">
+                <div class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full mb-4 text-sm font-medium">
+                    Azure Certified • TypeScript Specialist • Former Director at Health Catalyst
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-secondary">
+                    Enterprise-Grade Engineering for Local Business Success
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Leveraging 15+ years of Azure cloud expertise and Health Catalyst leadership to deliver tailored backend solutions that scale with your business.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="services.html" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Explore Our Services</a>
+                    <a href="contact.html" class="border-2 border-primary text-primary px-6 py-3 rounded font-medium hover:bg-primary hover:text-white transition-all">Schedule a Consultation</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" alt="Enterprise cloud solutions" class="rounded-lg shadow-lg w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Introduction -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 relative inline-block pb-2 text-secondary">
+                Our Specialized Services
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                World Class Engineers specializes in cloud-native backend solutions that elevate your business capabilities. Our focused services deliver technical excellence without enterprise-level costs.
+            </p>
+        </div>
+        
+        <!-- Services Grid -->
+        <div class="container mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1: Cloud-Native Backend Development -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all overflow-hidden">
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-6 text-2xl">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Cloud-Native Backend Development</h3>
+                    <p class="text-gray-600 mb-4">Azure-powered backend solutions designed for performance and scalability.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Azure Cloud Architecture</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>TypeScript/Node.js Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Serverless Functions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>CI/CD Implementation</span>
+                        </li>
+                    </ul>
+                    <a href="services.html#cloud" class="inline-flex items-center font-medium text-primary hover:text-primary-dark">
+                        Learn More <i class="fas fa-arrow-right ml-2 transition-transform transform hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Card 2: Application Performance Engineering -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all overflow-hidden">
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-6 text-2xl">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Application Performance Engineering</h3>
+                    <p class="text-gray-600 mb-4">Optimize your applications for speed, reliability, and cost-effectiveness.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Performance Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Database Optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Scaling Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Resource Efficiency</span>
+                        </li>
+                    </ul>
+                    <a href="services.html#performance" class="inline-flex items-center font-medium text-primary hover:text-primary-dark">
+                        Learn More <i class="fas fa-arrow-right ml-2 transition-transform transform hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Card 3: Integration & Automation Solutions -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all overflow-hidden">
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-6 text-2xl">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Integration & Automation</h3>
+                    <p class="text-gray-600 mb-4">Connect your business systems and automate workflows for maximum efficiency.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Payment System Integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>API Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Workflow Automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>PowerShell Solutions</span>
+                        </li>
+                    </ul>
+                    <a href="services.html#integration" class="inline-flex items-center font-medium text-primary hover:text-primary-dark">
+                        Learn More <i class="fas fa-arrow-right ml-2 transition-transform transform hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Card 4: Angular Enterprise Development -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all overflow-hidden">
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-6 text-2xl">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Angular Enterprise Development</h3>
+                    <p class="text-gray-600 mb-4">Robust, maintainable frontend applications built with enterprise practices.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Angular Applications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Component Libraries</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Legacy System Migrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Testing Best Practices</span>
+                        </li>
+                    </ul>
+                    <a href="services.html#angular" class="inline-flex items-center font-medium text-primary hover:text-primary-dark">
+                        Learn More <i class="fas fa-arrow-right ml-2 transition-transform transform hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-2/5 mb-8 md:mb-0">
+                    <img src="img/joe-skeen.png" alt="Joe Skeen, Technical Director" class="rounded-lg shadow-lg mx-auto">
+                </div>
+                <div class="md:w-3/5 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6 text-secondary">Enterprise Leadership, Local Focus</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        After 5 years as a Director at Health Catalyst leading cloud infrastructure and development teams, Joe Skeen now brings that enterprise-level expertise directly to local businesses.
+                    </p>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Azure Certified Administrator</h3>
+                                <p class="text-gray-600">Expert in cloud architecture and deployment</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">15+ Years Development Experience</h3>
+                                <p class="text-gray-600">Across a wide range of technologies and industries</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Technical Leadership</h3>
+                                <p class="text-gray-600">Former Director managing multiple technical teams</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="inline-block bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Learn More About Joe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4 text-center text-secondary relative inline-block pb-2 left-1/2 transform -translate-x-1/2">
+                Our Process
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
+                A streamlined approach that delivers enterprise-quality results
+            </p>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Discovery</h3>
+                    <p class="text-gray-600">Understanding your technical challenges and business goals</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Solution Design</h3>
+                    <p class="text-gray-600">Engineering the right approach for your specific needs</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Implementation</h3>
+                    <p class="text-gray-600">Building with best practices and continuous testing</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6">4</div>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Evolution</h3>
+                    <p class="text-gray-600">Ongoing support and optimization as your business grows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Preview -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4 text-center text-secondary relative inline-block pb-2 left-1/2 transform -translate-x-1/2">
+                Featured Case Study
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
+                See how we've helped businesses like yours achieve technical success
+            </p>
+            
+            <!-- TacTilesPlus Case Study -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden md:flex">
+                <div class="md:w-1/2">
+                    <img src="img/case-study-1.jpg" alt="TacTilesPlus Payment Integration" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-1/2 p-8">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full mb-4 text-sm font-medium">
+                        Payment Integration
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-secondary">TacTilesPlus Stripe Integration</h3>
+                    <p class="text-gray-600 mb-6">
+                        Learn how we helped TacTilesPlus implement a seamless payment experience with Stripe, increasing their online conversions by 32% and reducing checkout abandonment.
+                    </p>
+                    <div class="mb-6 space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Secure payment processing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Subscription management</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Webhook integration</span>
+                        </div>
+                    </div>
+                    <a href="case-studies.html" class="inline-block bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Read Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-secondary relative inline-block pb-2">
+                Technologies We Specialize In
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                Industry-standard tools and frameworks we use to deliver exceptional solutions
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" alt="Microsoft Azure" class="h-12 mx-auto mb-3">
+                    <h3 class="font-medium">Microsoft Azure</h3>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="TypeScript" class="h-12 mx-auto mb-3">
+                    <h3 class="font-medium">TypeScript</h3>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" class="h-12 mx-auto mb-3">
+                    <h3 class="font-medium">Node.js</h3>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" alt="Angular" class="h-12 mx-auto mb-3">
+                    <h3 class="font-medium">Angular</h3>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <div class="h-12 mx-auto mb-3 flex items-center justify-center text-4xl text-primary">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="font-medium">REST APIs</h3>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <img src="https://cdn.worldvectorlogo.com/logos/powershell.svg" alt="PowerShell" class="h-12 mx-auto mb-3">
+                    <h3 class="font-medium">PowerShell</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Ready to transform your technical infrastructure?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Schedule a free 30-minute consultation to discuss how enterprise-grade engineering can solve your business challenges.
+            </p>
+            <a href="contact.html" class="inline-block bg-white text-primary px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition-all">Book Your Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">World Class Engineers</h3>
+                    <p class="text-gray-400 mb-4">Enterprise-grade backend solutions for local businesses</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/josephskeenjr" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/joeskeen" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://joe.skeen.rocks/" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-all">About</a></li>
+                        <li><a href="case-studies.html" class="text-gray-400 hover:text-white transition-all">Case Studies</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#cloud" class="text-gray-400 hover:text-white transition-all">Cloud-Native Backend</a></li>
+                        <li><a href="services.html#performance" class="text-gray-400 hover:text-white transition-all">Performance Engineering</a></li>
+                        <li><a href="services.html#integration" class="text-gray-400 hover:text-white transition-all">Integration & Automation</a></li>
+                        <li><a href="services.html#angular" class="text-gray-400 hover:text-white transition-all">Angular Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <p class="flex items-center text-gray-400 mb-2">
+                        <i class="fas fa-envelope mr-3 text-primary-light"></i>
+                        hello@worldclassengineers.com
+                    </p>
+                    <p class="flex items-center text-gray-400">
+                        <i class="fas fa-phone mr-3 text-primary-light"></i>
+                        (555) 123-4567
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 World Class Engineers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
