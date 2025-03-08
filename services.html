@@ -5,262 +5,384 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore our range of technical services for local businesses - from backend development to system integration and technical consulting.">
     <title>Our Services | World Class Engineers</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom styles for animations -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#60a5fa',
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8',
+                        },
+                        secondary: {
+                            DEFAULT: '#0f172a',
+                        },
+                        success: {
+                            DEFAULT: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 font-sans">
     <!-- Header -->
-    <header class="header">
-        <div class="container">
+    <header class="bg-white sticky top-0 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="logo">
-                <a href="index.html">
-                    <h1>World Class Engineers</h1>
+                <a href="index.html" class="text-xl font-bold text-secondary">
+                    World Class Engineers
                 </a>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="process.html">Our Process</a></li>
-                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="index.html" class="font-medium text-secondary hover:text-primary transition-all">Home</a></li>
+                    <li><a href="services.html" class="font-medium text-secondary border-b-2 border-primary">Services</a></li>
+                    <li><a href="about.html" class="font-medium text-secondary hover:text-primary transition-all">About</a></li>
+                    <li><a href="contact.html" class="bg-primary text-white px-4 py-2 rounded font-medium hover:bg-primary-dark">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle">
+            <div class="md:hidden text-2xl cursor-pointer menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
     <!-- Services Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1>Our Services</h1>
-                <p>Technical solutions tailored for local businesses</p>
-            </div>
+    <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50 animate-fadeIn">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">Our Services</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Technical solutions tailored for local businesses</p>
         </div>
     </section>
 
     <!-- Services Introduction -->
-    <section class="services-intro">
-        <div class="container">
-            <div class="section-intro">
-                <h2>How We Help Local Businesses</h2>
-                <p>At World Class Engineers, we specialize in creating custom technical solutions that address the unique challenges faced by local businesses. Our services are designed to enhance your online presence, streamline operations, and drive growth through technology.</p>
-            </div>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 relative inline-block pb-2 text-secondary">
+                How We Help Local Businesses
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                At World Class Engineers, we specialize in creating custom technical solutions that address the unique challenges faced by local businesses. Our services are designed to enhance your online presence, streamline operations, and drive growth through technology.
+            </p>
         </div>
     </section>
 
     <!-- Main Services -->
-    <section id="backend" class="service-detail">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-info">
-                    <h2>Backend Development</h2>
-                    <p>Powerful, scalable systems that drive your business operations</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom API development</li>
-                        <li><i class="fas fa-check"></i> Server-side application logic</li>
-                        <li><i class="fas fa-check"></i> Secure authentication systems</li>
-                        <li><i class="fas fa-check"></i> Scalable architecture design</li>
-                        <li><i class="fas fa-check"></i> Performance optimization</li>
+    <section id="backend" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-3/5 md:pr-12 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">Backend Development</h2>
+                    <p class="text-lg text-gray-600 mb-6">Powerful, scalable systems that drive your business operations</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Custom API development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Server-side application logic</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Secure authentication systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Scalable architecture design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Performance optimization</span>
+                        </li>
                     </ul>
-                    <p>Our backend development services focus on creating robust systems that power your business applications. We design and implement server-side solutions that efficiently handle data processing, business logic, and integration with other systems.</p>
-                    <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+                    <p class="text-gray-600 mb-6">Our backend development services focus on creating robust systems that power your business applications. We design and implement server-side solutions that efficiently handle data processing, business logic, and integration with other systems.</p>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Discuss Your Project</a>
                 </div>
-                <div class="service-image">
-                    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="Backend Development Service" class="rounded-lg shadow-lg">
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="Backend Development Service" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="integration" class="service-detail alternate">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-image">
-                    <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg" alt="System Integration Service" class="rounded-lg shadow-lg">
-                </div>
-                <div class="service-info">
-                    <h2>System Integration</h2>
-                    <p>Connect your business tools and streamline operations</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Third-party API integration</li>
-                        <li><i class="fas fa-check"></i> Payment gateway implementation</li>
-                        <li><i class="fas fa-check"></i> CRM and ERP connections</li>
-                        <li><i class="fas fa-check"></i> Data synchronization across platforms</li>
-                        <li><i class="fas fa-check"></i> Legacy system modernization</li>
+    <section id="integration" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center flex-row-reverse">
+                <div class="md:w-3/5 md:pl-12 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">System Integration</h2>
+                    <p class="text-lg text-gray-600 mb-6">Connect your business tools and streamline operations</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Third-party API integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Payment gateway implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>CRM and ERP connections</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Data synchronization across platforms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Legacy system modernization</span>
+                        </li>
                     </ul>
-                    <p>Our system integration services help you connect various tools and platforms into a cohesive ecosystem. We ensure your business systems communicate effectively, eliminating data silos and manual processes.</p>
-                    <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+                    <p class="text-gray-600 mb-6">Our system integration services help you connect various tools and platforms into a cohesive ecosystem. We ensure your business systems communicate effectively, eliminating data silos and manual processes.</p>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Discuss Your Project</a>
+                </div>
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg" alt="System Integration Service" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="consulting" class="service-detail">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-info">
-                    <h2>Technical Consulting</h2>
-                    <p>Expert guidance for your technology decisions</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Technology stack recommendations</li>
-                        <li><i class="fas fa-check"></i> Digital transformation strategy</li>
-                        <li><i class="fas fa-check"></i> Security and compliance audits</li>
-                        <li><i class="fas fa-check"></i> Performance optimization</li>
-                        <li><i class="fas fa-check"></i> Technical debt assessment</li>
+    <section id="consulting" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-3/5 md:pr-12 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">Technical Consulting</h2>
+                    <p class="text-lg text-gray-600 mb-6">Expert guidance for your technology decisions</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Technology stack recommendations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Digital transformation strategy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Security and compliance audits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Performance optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Technical debt assessment</span>
+                        </li>
                     </ul>
-                    <p>Our consulting services provide you with expert guidance on technology decisions. We help you navigate the complex landscape of digital tools and platforms to make informed choices that align with your business goals.</p>
-                    <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                    <p class="text-gray-600 mb-6">Our consulting services provide you with expert guidance on technology decisions. We help you navigate the complex landscape of digital tools and platforms to make informed choices that align with your business goals.</p>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Schedule a Consultation</a>
                 </div>
-                <div class="service-image">
-                    <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg" alt="Technical Consulting Service" class="rounded-lg shadow-lg">
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg" alt="Technical Consulting Service" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="ecommerce" class="service-detail alternate">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-image">
-                    <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg" alt="E-commerce Solutions" class="rounded-lg shadow-lg">
-                </div>
-                <div class="service-info">
-                    <h2>E-commerce Solutions</h2>
-                    <p>Sell products and services online with ease</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom shopping cart development</li>
-                        <li><i class="fas fa-check"></i> Inventory management systems</li>
-                        <li><i class="fas fa-check"></i> Secure payment processing</li>
-                        <li><i class="fas fa-check"></i> Order fulfillment automation</li>
-                        <li><i class="fas fa-check"></i> Customer account management</li>
+    <section id="ecommerce" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center flex-row-reverse">
+                <div class="md:w-3/5 md:pl-12 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">E-commerce Solutions</h2>
+                    <p class="text-lg text-gray-600 mb-6">Sell products and services online with ease</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Custom shopping cart development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Inventory management systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Secure payment processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Order fulfillment automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Customer account management</span>
+                        </li>
                     </ul>
-                    <p>Our e-commerce solutions help local businesses sell products and services online. We build custom shopping experiences that convert visitors into customers and streamline your order processing.</p>
-                    <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+                    <p class="text-gray-600 mb-6">Our e-commerce solutions help local businesses sell products and services online. We build custom shopping experiences that convert visitors into customers and streamline your order processing.</p>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Discuss Your Project</a>
+                </div>
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg" alt="E-commerce Solutions" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="database" class="service-detail">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-info">
-                    <h2>Database Design & Development</h2>
-                    <p>Organize and manage your business data effectively</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom database architecture</li>
-                        <li><i class="fas fa-check"></i> Data migration services</li>
-                        <li><i class="fas fa-check"></i> Performance optimization</li>
-                        <li><i class="fas fa-check"></i> Backup and recovery systems</li>
-                        <li><i class="fas fa-check"></i> Data security implementation</li>
+    <section id="database" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-3/5 md:pr-12 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">Database Design & Development</h2>
+                    <p class="text-lg text-gray-600 mb-6">Organize and manage your business data effectively</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Custom database architecture</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Data migration services</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Performance optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Backup and recovery systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-success mt-1 mr-2"></i>
+                            <span>Data security implementation</span>
+                        </li>
                     </ul>
-                    <p>Our database design services help you organize and manage your business data efficiently. We create scalable database solutions that provide fast access to information while maintaining data integrity and security.</p>
-                    <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+                    <p class="text-gray-600 mb-6">Our database design services help you organize and manage your business data efficiently. We create scalable database solutions that provide fast access to information while maintaining data integrity and security.</p>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-primary-dark transition-all">Discuss Your Project</a>
                 </div>
-                <div class="service-image">
-                    <img src="https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg" alt="Database Design Service" class="rounded-lg shadow-lg">
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg" alt="Database Design Service" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Additional Services -->
-    <section class="additional-services">
-        <div class="container">
-            <h2 class="section-title">Additional Technical Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-secondary relative inline-block pb-2 left-1/2 transform -translate-x-1/2">
+                Additional Technical Services
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-server"></i>
                     </div>
-                    <h3>Cloud Infrastructure</h3>
-                    <p>Setup and management of scalable cloud hosting environments for your applications.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Cloud Infrastructure</h3>
+                    <p class="text-gray-600">Setup and management of scalable cloud hosting environments for your applications.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <h3>Security Implementation</h3>
-                    <p>Protecting your data and applications with modern security practices and tools.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Security Implementation</h3>
+                    <p class="text-gray-600">Protecting your data and applications with modern security practices and tools.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Custom reporting systems to help you make data-driven business decisions.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Analytics & Reporting</h3>
+                    <p class="text-gray-600">Custom reporting systems to help you make data-driven business decisions.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>API Development</h3>
-                    <p>Custom APIs to connect your website with mobile apps and other services.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">API Development</h3>
+                    <p class="text-gray-600">Custom APIs to connect your website with mobile apps and other services.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Need a custom solution for your business?</h2>
-                <p>Contact us today to discuss how we can help you solve your technical challenges.</p>
-                <a href="contact.html" class="btn btn-light">Schedule a Free Consultation</a>
-            </div>
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Need a custom solution for your business?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Schedule a free 30-minute consultation to discuss how we can help you achieve your technical goals.
+            </p>
+            <a href="contact.html" class="inline-block bg-white text-primary px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition-all">Book Your Consultation</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>World Class Engineers</h3>
-                    <p>Technical solutions for local businesses</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
-                        <li><a href="process.html">Our Process</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html#backend">Backend Development</a></li>
-                        <li><a href="services.html#integration">System Integration</a></li>
-                        <li><a href="services.html#consulting">Technical Consulting</a></li>
-                        <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
-                        <li><a href="services.html#database">Database Design</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-envelope"></i> hello@worldclassengineers.com</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">World Class Engineers</h3>
+                    <p class="text-gray-400 mb-4">Enterprise-grade backend solutions for local businesses</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/josephskeenjr" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/joeskeen" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://joe.skeen.rocks/" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-globe"></i>
+                        </a>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-all">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#backend" class="text-gray-400 hover:text-white transition-all">Backend Development</a></li>
+                        <li><a href="#integration" class="text-gray-400 hover:text-white transition-all">System Integration</a></li>
+                        <li><a href="#consulting" class="text-gray-400 hover:text-white transition-all">Technical Consulting</a></li>
+                        <li><a href="#database" class="text-gray-400 hover:text-white transition-all">Database Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <p class="flex items-center text-gray-400 mb-2">
+                        <i class="fas fa-envelope mr-3 text-primary-light"></i>
+                        hello@worldclassengineers.com
+                    </p>
+                    <p class="flex items-center text-gray-400">
+                        <i class="fas fa-phone mr-3 text-primary-light"></i>
+                        (555) 123-4567
+                    </p>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 World Class Engineers. All rights reserved.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 World Class Engineers. All rights reserved.</p>
             </div>
         </div>
     </footer>

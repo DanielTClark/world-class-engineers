@@ -5,256 +5,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn about Joe Skeen and World Class Engineers - providing expert technical solutions for local businesses.">
     <title>About Us | World Class Engineers</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom styles for animations -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#60a5fa',
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8',
+                        },
+                        secondary: {
+                            DEFAULT: '#0f172a',
+                        },
+                        success: {
+                            DEFAULT: '#10b981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 font-sans">
     <!-- Header -->
-    <header class="header">
-        <div class="container">
+    <header class="bg-white sticky top-0 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="logo">
-                <a href="index.html">
-                    <h1>World Class Engineers</h1>
+                <a href="index.html" class="text-xl font-bold text-secondary">
+                    World Class Engineers
                 </a>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="process.html">Our Process</a></li>
-                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="index.html" class="font-medium text-secondary hover:text-primary transition-all">Home</a></li>
+                    <li><a href="services.html" class="font-medium text-secondary hover:text-primary transition-all">Services</a></li>
+                    <li><a href="about.html" class="font-medium text-secondary border-b-2 border-primary">About</a></li>
+                    <li><a href="contact.html" class="bg-primary text-white px-4 py-2 rounded font-medium hover:bg-primary-dark">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle">
+            <div class="md:hidden text-2xl cursor-pointer menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
     <!-- About Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1>About Us</h1>
-                <p>Technical expertise with a local business focus</p>
-            </div>
+    <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50 animate-fadeIn">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">About Us</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Technical expertise with a local business focus</p>
         </div>
     </section>
 
     <!-- Company Introduction -->
-    <section class="company-intro">
-        <div class="container">
-            <div class="company-content">
-                <div class="company-image">
-                    <img src="https://images.pexels.com/photos/1181435/pexels-photo-1181435.jpeg" alt="World Class Engineers Office" class="rounded-lg shadow-lg">
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-2/5 mb-8 md:mb-0">
+                    <img src="https://images.pexels.com/photos/1181435/pexels-photo-1181435.jpeg" alt="World Class Engineers Office" class="rounded-lg shadow-lg w-full">
                 </div>
-                <div class="company-info">
-                    <h2>Our Story</h2>
-                    <p>World Class Engineers was founded with a simple mission: to help local businesses leverage technology to grow and thrive in an increasingly digital world.</p>
-                    <p>After years of working with both large corporations and small businesses, we recognized that local businesses often struggle to find technical partners who understand their unique challenges and can provide solutions that are both powerful and affordable.</p>
-                    <p>Today, we're proud to work closely with businesses throughout the community, providing the technical expertise they need without the enterprise-level price tag.</p>
+                <div class="md:w-3/5 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6 text-secondary">Our Story</h2>
+                    <p class="text-lg text-gray-600 mb-4">World Class Engineers was founded with a simple mission: to help local businesses leverage technology to grow and thrive in an increasingly digital world.</p>
+                    <p class="text-lg text-gray-600 mb-4">After years of working with both large corporations and small businesses, we recognized that local businesses often struggle to find technical partners who understand their unique challenges and can provide solutions that are both powerful and affordable.</p>
+                    <p class="text-lg text-gray-600">Today, we're proud to work closely with businesses throughout the community, providing the technical expertise they need without the enterprise-level price tag.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Founder Profile -->
-    <section class="founder-profile">
-        <div class="container">
-            <div class="founder-content">
-                <div class="founder-info">
-                    <h2>Meet Joe Skeen</h2>
-                    <h3>Founder & Technical Director</h3>
-                    <p>With over 15 years of experience in software development, Joe Skeen has built a reputation for delivering robust, scalable technical solutions for businesses of all sizes.</p>
-                    <p>Throughout his career, Joe has worn many hats - from front-end to back-end development; from infrastructure to user experience; from software engineer to engineering manager. This diverse experience allows him to understand the full technical landscape and provide comprehensive solutions for local businesses.</p>
-                    <p>Before founding World Class Engineers, Joe worked with several technology companies where he honed his skills in creating efficient, maintainable systems that drive business growth. His passion for mentoring other developers eventually led him to establish World Class Engineers, where he could combine his technical expertise with his commitment to helping local businesses succeed.</p>
-                    <div class="founder-skills">
-                        <h4>Technical Expertise:</h4>
-                        <div class="skill-tags">
-                            <span>Backend Development</span>
-                            <span>API Design</span>
-                            <span>Database Architecture</span>
-                            <span>System Integration</span>
-                            <span>Cloud Infrastructure</span>
-                            <span>Technical Leadership</span>
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-3/5 md:pr-12 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">Meet Joe Skeen</h2>
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Founder & Technical Director</h3>
+                    <p class="text-lg text-gray-600 mb-4">With over 15 years of experience in software development, Joe Skeen has built a reputation for delivering robust, scalable technical solutions for businesses of all sizes.</p>
+                    <p class="text-lg text-gray-600 mb-4">Throughout his career, Joe has worn many hats - from front-end to back-end development; from infrastructure to user experience; from software engineer to engineering manager. This diverse experience allows him to understand the full technical landscape and provide comprehensive solutions for local businesses.</p>
+                    <p class="text-lg text-gray-600 mb-6">Before founding World Class Engineers, Joe worked with several technology companies where he honed his skills in creating efficient, maintainable systems that drive business growth. His passion for mentoring other developers eventually led him to establish World Class Engineers, where he could combine his technical expertise with his commitment to helping local businesses succeed.</p>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg mb-3">Technical Expertise:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Backend Development</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">API Design</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Database Architecture</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">System Integration</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Cloud Infrastructure</span>
+                            <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm">Technical Leadership</span>
                         </div>
                     </div>
-                    <div class="founder-links">
-                        <a href="https://joe.skeen.rocks/" target="_blank" class="btn btn-outline">Personal Website</a>
-                        <a href="https://www.linkedin.com/in/joeskeen/" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://joe.skeen.rocks/" target="_blank" class="border-2 border-primary text-primary px-4 py-2 rounded font-medium hover:bg-primary hover:text-white transition-all">Personal Website</a>
+                        <a href="https://www.linkedin.com/in/joeskeen/" target="_blank" class="border-2 border-primary text-primary px-4 py-2 rounded font-medium hover:bg-primary hover:text-white transition-all">LinkedIn Profile</a>
                     </div>
                 </div>
-                <div class="founder-image">
-                    <img src="img/joe-skeen.png" alt="Joe Skeen, Founder of World Class Engineers" class="rounded-lg shadow-lg">
+                <div class="md:w-2/5">
+                    <img src="img/joe-skeen.png" alt="Joe Skeen, Founder of World Class Engineers" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Approach -->
-    <section class="our-approach">
-        <div class="container">
-            <h2 class="section-title">Our Approach</h2>
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <div class="approach-icon">
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-secondary relative inline-block pb-2 left-1/2 transform -translate-x-1/2">
+                Our Approach
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3>Listen First</h3>
-                    <p>We begin every project by deeply understanding your business needs, challenges, and goals.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Listen First</h3>
+                    <p class="text-gray-600">We begin every project by deeply understanding your business needs, challenges, and goals.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Strategic Solutions</h3>
-                    <p>We develop technical solutions that align with your business strategy and deliver measurable results.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Strategic Solutions</h3>
+                    <p class="text-gray-600">We develop technical solutions that align with your business strategy and deliver measurable results.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-code-branch"></i>
                     </div>
-                    <h3>Quality Implementation</h3>
-                    <p>Our development process emphasizes clean, maintainable code and robust, scalable architecture.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Quality Implementation</h3>
+                    <p class="text-gray-600">Our development process emphasizes clean, maintainable code and robust, scalable architecture.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Ongoing Support</h3>
-                    <p>We provide continued support and refinement to ensure your technical solutions evolve with your business.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Ongoing Support</h3>
+                    <p class="text-gray-600">We provide continued support and refinement to ensure your technical solutions evolve with your business.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Values Section -->
-    <section class="values">
-        <div class="container">
-            <h2 class="section-title">Our Values</h2>
-            <div class="values-content">
-                <div class="values-list">
-                    <div class="value-item">
-                        <h3><i class="fas fa-star"></i> Excellence</h3>
-                        <p>We are committed to delivering high-quality, professional solutions that exceed expectations.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-handshake"></i> Partnership</h3>
-                        <p>We view ourselves as partners in your success, not just service providers.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
-                        <p>We continuously explore new technologies and approaches to solve complex business challenges.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-users"></i> Community</h3>
-                        <p>We are passionate about supporting and strengthening our local business community.</p>
-                    </div>
-                    <div class="value-item">
-                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                        <p>We believe in empowering clients through knowledge sharing and technical guidance.</p>
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-secondary relative inline-block pb-2 left-1/2 transform -translate-x-1/2">
+                Our Values
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+            </h2>
+            <div class="md:flex items-center">
+                <div class="md:w-3/5 md:pr-12 mb-8 md:mb-0">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-secondary">Excellence</h3>
+                                <p class="text-gray-600">We are committed to delivering high-quality, professional solutions that exceed expectations.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-secondary">Partnership</h3>
+                                <p class="text-gray-600">We view ourselves as partners in your success, not just service providers.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-secondary">Innovation</h3>
+                                <p class="text-gray-600">We continuously explore new technologies and approaches to solve complex business challenges.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-secondary">Community</h3>
+                                <p class="text-gray-600">We are passionate about supporting and strengthening our local business community.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-secondary">Education</h3>
+                                <p class="text-gray-600">We believe in empowering clients through knowledge sharing and technical guidance.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="values-image">
-                    <img src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg" alt="World Class Engineers team working" class="rounded-lg shadow-lg">
+                <div class="md:w-2/5">
+                    <img src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg" alt="World Class Engineers team working" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Local Businesses Choose Us -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h2 class="section-title">Why Local Businesses Choose Us</h2>
-            <div class="reasons-grid">
-                <div class="reason-card">
-                    <div class="reason-icon">
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-secondary relative inline-block pb-2 left-1/2 transform -translate-x-1/2">
+                Why Local Businesses Choose Us
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Local Focus</h3>
-                    <p>We understand the unique challenges and opportunities in our community's business landscape.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Local Focus</h3>
+                    <p class="text-gray-600">We understand the unique challenges and opportunities in our community's business landscape.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
-                    <h3>Value-Based Pricing</h3>
-                    <p>Our services are priced to provide maximum value for local businesses without enterprise-level budgets.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Value-Based Pricing</h3>
+                    <p class="text-gray-600">Our services are priced to provide maximum value for local businesses without enterprise-level budgets.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Practical Solutions</h3>
-                    <p>We focus on solutions that deliver tangible business results, not just fancy technology.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Practical Solutions</h3>
+                    <p class="text-gray-600">We focus on solutions that deliver tangible business results, not just fancy technology.</p>
                 </div>
-                <div class="reason-card">
-                    <div class="reason-icon">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-primary mb-4 text-2xl">
                         <i class="fas fa-coffee"></i>
                     </div>
-                    <h3>Personal Relationship</h3>
-                    <p>We're just a call or coffee away when you need us – not hidden behind layers of account managers.</p>
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Personal Relationship</h3>
+                    <p class="text-gray-600">We're just a call or coffee away when you need us – not hidden behind layers of account managers.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to work with a technical partner who understands your business?</h2>
-                <p>Let's discuss how we can help you achieve your goals with the right technical solutions.</p>
-                <a href="contact.html" class="btn btn-light">Get in Touch</a>
-            </div>
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Ready to work with a technical partner who understands your business?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Let's discuss how we can help you achieve your goals with the right technical solutions.
+            </p>
+            <a href="contact.html" class="inline-block bg-white text-primary px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition-all">Get in Touch</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>World Class Engineers</h3>
-                    <p>Technical solutions for local businesses</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
-                        <li><a href="process.html">Our Process</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html#backend">Backend Development</a></li>
-                        <li><a href="services.html#integration">System Integration</a></li>
-                        <li><a href="services.html#consulting">Technical Consulting</a></li>
-                        <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
-                        <li><a href="services.html#database">Database Design</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-envelope"></i> hello@worldclassengineers.com</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">World Class Engineers</h3>
+                    <p class="text-gray-400 mb-4">Enterprise-grade backend solutions for local businesses</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/josephskeenjr" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/joeskeen" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://joe.skeen.rocks/" target="_blank" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                            <i class="fas fa-globe"></i>
+                        </a>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-all">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#backend" class="text-gray-400 hover:text-white transition-all">Backend Development</a></li>
+                        <li><a href="services.html#integration" class="text-gray-400 hover:text-white transition-all">System Integration</a></li>
+                        <li><a href="services.html#consulting" class="text-gray-400 hover:text-white transition-all">Technical Consulting</a></li>
+                        <li><a href="services.html#database" class="text-gray-400 hover:text-white transition-all">Database Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <p class="flex items-center text-gray-400 mb-2">
+                        <i class="fas fa-envelope mr-3 text-primary-light"></i>
+                        hello@worldclassengineers.com
+                    </p>
+                    <p class="flex items-center text-gray-400">
+                        <i class="fas fa-phone mr-3 text-primary-light"></i>
+                        (555) 123-4567
+                    </p>
+                </div>
             </div>
-            <div class="footer-bottom">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
                 <p>&copy; 2025 World Class Engineers. All rights reserved.</p>
             </div>
         </div>
